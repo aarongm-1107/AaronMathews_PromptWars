@@ -126,8 +126,7 @@ export const DecisionForm: React.FC<DecisionFormProps> = ({ onSubmit, isLoading 
             </label>
             <span className="field-hint">Required • {decision.length} chars</span>
           </div>
-          <input
-            id="decision"
+          <input required aria-required="true" id="decision"
             type="text"
             className="input-text"
             placeholder="e.g. Whether to accept a 6-month off-cycle startup internship vs graduate on time"
@@ -146,8 +145,7 @@ export const DecisionForm: React.FC<DecisionFormProps> = ({ onSubmit, isLoading 
             </label>
             <span className="field-hint">Background, constraints, stakeholders</span>
           </div>
-          <textarea
-            id="context"
+          <textarea aria-label="Relevant context and situation" id="context"
             className="textarea-input"
             rows={3}
             placeholder="e.g. Third-year student. Received offer from Series B fintech (90 people). Requires 1-semester leave of absence. Parents are cautious, peers encourage taking it."
@@ -166,8 +164,7 @@ export const DecisionForm: React.FC<DecisionFormProps> = ({ onSubmit, isLoading 
             </label>
             <span className="field-hint">Required • Why you lean one way</span>
           </div>
-          <textarea
-            id="reasoning"
+          <textarea required aria-required="true" id="reasoning"
             className="textarea-input"
             rows={3}
             placeholder="e.g. I am leaning toward accepting. Hands-on startup experience will guarantee I stand out, and delay doesn't matter because nobody in tech cares about graduation dates."
@@ -186,8 +183,7 @@ export const DecisionForm: React.FC<DecisionFormProps> = ({ onSubmit, isLoading 
             </label>
             <span className="field-hint">Required • What matters most</span>
           </div>
-          <textarea
-            id="priorities"
+          <textarea required aria-required="true" id="priorities"
             className="textarea-input"
             rows={3}
             placeholder="e.g. 1. Maximizing future career prospects&#10;2. High quality learning &amp; mentorship&#10;3. Maintaining steady momentum &amp; low debt"
@@ -198,9 +194,7 @@ export const DecisionForm: React.FC<DecisionFormProps> = ({ onSubmit, isLoading 
         </div>
 
         {validationError && (
-          <div
-            style={{
-              padding: '0.75rem 1rem',
+          <div role="alert" aria-live="assertive" style={{ padding: '0.75rem 1rem',
               borderRadius: '8px',
               background: 'rgba(244, 63, 94, 0.15)',
               border: '1px solid rgba(244, 63, 94, 0.4)',
@@ -239,3 +233,4 @@ function ShieldAlertIcon() {
     </svg>
   );
 }
+

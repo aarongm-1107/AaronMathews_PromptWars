@@ -12,7 +12,7 @@ export const Header: React.FC<HeaderProps> = ({ onReset, hasResults }) => {
   return (
     <header className="header">
       <div className="header-inner">
-        <div className="logo-badge" onClick={onReset} role="button" tabIndex={0}>
+        <div className="logo-badge" onClick={onReset} onKeyDown={(e) => { if (e.key === "Enter" || e.key === " ") onReset?.(); }} role="button" tabIndex={0} aria-label="Reset BlindSpot analysis">
           <div className="logo-icon-wrapper">
             <Target size={22} color="#ffffff" strokeWidth={2.5} />
           </div>
@@ -37,3 +37,4 @@ export const Header: React.FC<HeaderProps> = ({ onReset, hasResults }) => {
     </header>
   );
 };
+
